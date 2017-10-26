@@ -1,0 +1,22 @@
+body {
+    background-color: #ffffff;
+    padding: 0px;
+}
+table, th, td {
+    border: 1px solid #000000;
+    background-color: #ff8608;
+    border-collapse: collapse;
+    padding: 5px;
+    width: 700px;
+}
+tr.cabecalhodescricao{
+  text-align: center;
+
+}
+.botaoenviar{
+  float: right;
+
+}
+td.espacamentotabela{
+  background-color: #ffffff;
+}
