@@ -1,51 +1,20 @@
 <html>
 <head>
+<!-- 
+Autocomplete search from http://leaverou.github.io/awesomplete/
+
+-->
 <title>Nome da empresa</title>
 <link rel="stylesheet" type="text/css" href="cssorcamento.css">
 <link rel="icon" type="image/png" href="favicon.ico">
-<script type="text/javascript">
-    function multiplicar()
-    {
-        // Capture the entered values of two input boxes
-        var valor1 = document.getElementById('qtde').value;
-        var valor2 = document.getElementById('valorunit').value;
-
-        // Add them together and display
-        var multiplicacao = parseInt(valor1) * parseInt(valor2);
-        //document.write(multiplicacao);
-        document.getElementById("resultadomultiplicacao").value = multiplicacao;
-
-        // Capture the entered values of two input boxes
-        var valor3 = document.getElementById('qtde2').value;
-        var valor4 = document.getElementById('valorunit2').value;
-
-        // Add them together and display
-        var multiplicacao2 = parseInt(valor3) * parseInt(valor4);
-        //document.write(multiplicacao);
-        document.getElementById("resultadomultiplicacao2").value = multiplicacao2;
-    }
-    function totalizador()
-    {
-        // Capture the entered values of two input boxes
-        var valor1 = document.getElementById('resultadomultiplicacao').value;
-        var valor2 = document.getElementById('resultadomultiplicacao2').value;
-
-        // Add them together and display
-        var somatotal = parseInt(valor1) + parseInt(valor2);
-        //document.write(multiplicacao);
-        document.getElementById("resultadofinal").value = somatotal;
-
-    }
-    function imprimirpagina()
-    {
-      window.print();
-    }
-</script>
+<script src="allJavascript.js"></script>
+<link rel="stylesheet" href="awesomplete/awesomplete.css" />
+<script src="awesomplete/awesomplete.js" async></script>
 </head>
 <body>
   <table>
    <tr>
-     <td colspan="5"><img src="logo-magedo-orcamento.jpg" alt="Logomarca Magedo Automatizacao"></td>
+     <td colspan="5"><img src="logo-magedo-orcamento.jpg" alt="Logomarca Magedo Automatizacao" class="logomarca"></td>
    </tr>
    <tr>
      <th colspan="5"><br></th>
@@ -73,21 +42,21 @@
    </tr>
    <tr class="">
       <td rowspan="3">25/10/2017</td>
-      <td><input type="text" name="descricao"></td>
+      <td><input type="text" class="awesomplete" data-list="Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails" name="descricao"></td>
       <td><input type="text" name="quantidade" size="4" id="qtde"></td>
-      <td><input type="text" name="valorunitario" id="valorunit"></td>
-      <td><input type="text" name"resultadomultiplicacao" id="resultadomultiplicacao"></td>
+      <td><input type="text" name="valorunitario" size="4" id="valorunit"></td>
+      <td><input type="text" name"resultadomultiplicacao" size="7" id="resultadomultiplicacao"></td>
    </tr>
    <tr class="">
-      <td><input type="text" name="descricao"></td>
+      <td><input type="text" class="" name="descricao"></td>
       <td><input type="text" name="quantidade" size="4" id="qtde2"></td>
-      <td><input type="text" name="valorunitario" id="valorunit2"></td>
-      <td><input type="text" name"resultadomultiplicacao" id="resultadomultiplicacao2"></td>
+      <td><input type="text" name="valorunitario" size="4" id="valorunit2"></td>
+      <td><input type="text" name"resultadomultiplicacao" size="7" id="resultadomultiplicacao2"></td>
    </tr>
    <tr class="totalizador">
       <td colspan="2"></td>
       <td>R$ total= </td>
-      <td>R$ <input type="text" name"resultadofinal" id="resultadofinal"></td>
+      <td><input type="text" name"resultadofinal" size="7" id="resultadofinal"></td>
    </tr>
    <tr><td colspan="5" class="espacamentotabela"><br></td></tr>
    <tr class="botaofinalizar">

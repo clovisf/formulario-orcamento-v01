@@ -3,11 +3,16 @@ body {
     padding: 0px;
 }
 table, th, td {
-    border: 1px solid #000000;
-    background-color: #ff8608;
+    border: 2px dashed #ff8608;
+    background-color: #ffffff;
     border-collapse: collapse;
     padding: 5px;
     width: 700px;
+}
+logomarca{
+display: block;
+margin: 0 auto;
+
 }
 tr.cabecalhodescricao{
   text-align: center;
@@ -16,9 +21,13 @@ tr.cabecalhodescricao{
 .botaoenviar{
   float: right;
 }
+descricao{
+width: 100%;
+float: center;
+}
 .botaoimprimir{
   float: center;
 }
 td.espacamentotabela{
-  background-color: #ffffff;
+  background-color:;
 }
