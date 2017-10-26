@@ -18,6 +18,20 @@ function multiplicar()
         //document.write(multiplicacao);
         document.getElementById("resultadomultiplicacao2").value = multiplicacao2;
     }
+    function adicionarlinha()
+    {
+      var table = document.getElementById("tabelaorc");
+      var row = table.insertRow(2);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      cell1.innerHTML = "Descricao";
+      cell2.innerHTML = "Quantidade";
+      cell3.innerHTML = "R$ unitario";
+      cell4.innerHTML = "R$ total";
+
+    }
     function totalizador()
     {
         // Capture the entered values of two input boxes
