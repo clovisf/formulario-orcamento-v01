@@ -15,7 +15,9 @@ tr.cabecalhodescricao{
 }
 .botaoenviar{
   float: right;
-
+}
+.botaoimprimir{
+  float: center;
 }
 td.espacamentotabela{
   background-color: #ffffff;

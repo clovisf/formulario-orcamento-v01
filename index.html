@@ -2,7 +2,44 @@
 <head>
 <title>Nome da empresa</title>
 <link rel="stylesheet" type="text/css" href="cssorcamento.css">
+<script type="text/javascript">
+    function multiplicar()
+    {
+        // Capture the entered values of two input boxes
+        var valor1 = document.getElementById('qtde').value;
+        var valor2 = document.getElementById('valorunit').value;
 
+        // Add them together and display
+        var multiplicacao = parseInt(valor1) * parseInt(valor2);
+        //document.write(multiplicacao);
+        document.getElementById("resultadomultiplicacao").value = multiplicacao;
+
+        // Capture the entered values of two input boxes
+        var valor3 = document.getElementById('qtde2').value;
+        var valor4 = document.getElementById('valorunit2').value;
+
+        // Add them together and display
+        var multiplicacao2 = parseInt(valor3) * parseInt(valor4);
+        //document.write(multiplicacao);
+        document.getElementById("resultadomultiplicacao2").value = multiplicacao2;
+    }
+    function totalizador()
+    {
+        // Capture the entered values of two input boxes
+        var valor1 = document.getElementById('resultadomultiplicacao').value;
+        var valor2 = document.getElementById('resultadomultiplicacao2').value;
+
+        // Add them together and display
+        var somatotal = parseInt(valor1) + parseInt(valor2);
+        //document.write(multiplicacao);
+        document.getElementById("resultadofinal").value = somatotal;
+
+    }
+    function imprimirpagina()
+    {
+      window.print();
+    }
+</script>
 </head>
 <body>
   <table>
@@ -34,44 +71,32 @@
       <td>R$ total</td>
    </tr>
    <tr class="">
-      <td rowspan="5">25/10/2017</td>
+      <td rowspan="3">25/10/2017</td>
       <td><input type="text" name="descricao"></td>
-      <td><input type="text" name="quantidade" size="4"></td>
-      <td><input type="text" name="valorunitario"></td>
-      <td></td>
+      <td><input type="text" name="quantidade" size="4" id="qtde"></td>
+      <td><input type="text" name="valorunitario" id="valorunit"></td>
+      <td><input type="text" name"resultadomultiplicacao" id="resultadomultiplicacao"></td>
    </tr>
    <tr class="">
       <td><input type="text" name="descricao"></td>
-      <td><input type="text" name="quantidade" size="4"></td>
-      <td><input type="text" name="valorunitario"></td>
-      <td></td>
-   </tr>
-   <tr class="">
-      <td><input type="text" name="descricao"></td>
-      <td><input type="text" name="quantidade" size="4"></td>
-      <td><input type="text" name="valorunitario"></td>
-      <td></td>
-   </tr>
-   <tr class="">
-      <td><input type="text" name="descricao"></td>
-      <td><input type="text" name="quantidade" size="4"></td>
-      <td><input type="text" name="valorunitario"></td>
-      <td></td>
-   </tr>
-   <tr class="">
-      <td><input type="text" name="descricao"></td>
-      <td><input type="text" name="quantidade" size="4"></td>
-      <td><input type="text" name="valorunitario"></td>
-      <td></td>
+      <td><input type="text" name="quantidade" size="4" id="qtde2"></td>
+      <td><input type="text" name="valorunitario" id="valorunit2"></td>
+      <td><input type="text" name"resultadomultiplicacao" id="resultadomultiplicacao2"></td>
    </tr>
    <tr class="totalizador">
-      <td colspan="3"></td>
+      <td colspan="2"></td>
       <td>R$ total= </td>
-      <td>R$</td>
+      <td>R$ <input type="text" name"resultadofinal" id="resultadofinal"></td>
    </tr>
    <tr><td colspan="5" class="espacamentotabela"><br></td></tr>
    <tr class="botaofinalizar">
-     <td colspan="5"><input type="submit" value="Finalizar orcamento" class="botaoenviar"></td>
+     <td colspan="5"><input type="submit" value="Totalizar" class="botaoenviar" onclick="multiplicar();totalizador();"></td>
+  </tr>
+  <tr>
+    <td colspan="5"><br><br></td>
+  </tr>
+  <tr>
+    <td colspan="5"><input type="submit" value="Imprimir pagina" class="botaoimprimir" onclick="imprimirpagina();"></td>
   </tr>
  </table>
 </body>
