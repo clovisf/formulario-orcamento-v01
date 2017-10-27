@@ -48,3 +48,4 @@ function multiplicar()
     {
       window.print();
     }
+
