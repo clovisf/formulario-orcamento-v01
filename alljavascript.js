@@ -1,51 +1,81 @@
+var i = 1;
+
+window.onload = function(){
+
+  var table = document.getElementById("tabelaorc");
+  var row = table.insertRow(1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  cell1.innerHTML = "<input type='text' class='' name='' placeholder='Produto "+i.toString()+"'>";
+  cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"'>";
+  cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"'>";
+  cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'>";
+
+};
 function multiplicar()
     {
+      j = i;
+      for (j; j > 0; j--) {
         // Capture the entered values of two input boxes
-        var valor1 = document.getElementById('qtde').value;
-        var valor2 = document.getElementById('valorunit').value;
+        var valor1 = document.getElementById('qtde'+j.toString()).value;
+        var valor2 = document.getElementById('valorunit'+j.toString()).value;
 
+
+        console.log(multiplicacao);
         // Add them together and display
-        var multiplicacao = parseInt(valor1) * parseInt(valor2);
+        var multiplicacao = ((parseInt(valor1*10).toFixed(2) * parseInt(valor2*10).toFixed(2))/100).toFixed(2);
         //document.write(multiplicacao);
-        document.getElementById("resultadomultiplicacao").value = multiplicacao;
-
-        // Capture the entered values of two input boxes
-        var valor3 = document.getElementById('qtde2').value;
-        var valor4 = document.getElementById('valorunit2').value;
-
-        // Add them together and display
-        var multiplicacao2 = parseInt(valor3) * parseInt(valor4);
-        //document.write(multiplicacao);
-        document.getElementById("resultadomultiplicacao2").value = multiplicacao2;
+        document.getElementById('resultadomultiplicacao'+j.toString()).value = multiplicacao;
+      }
     }
+
+
+
+
+
     function adicionarlinha()
     {
+      i = i + 1;
       var table = document.getElementById("tabelaorc");
-      var row = table.insertRow(2);
+      if( i == 2){
+        var row = table.insertRow(2);
+      } else{
+        var row = table.insertRow(i);
+      }
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
       var cell4 = row.insertCell(3);
-      cell1.innerHTML = "Descricao";
-      cell2.innerHTML = "Quantidade";
-      cell3.innerHTML = "R$ unitario";
-      cell4.innerHTML = "R$ total";
+      cell1.innerHTML = "<input type='text' class='' name='' placeholder='Produto "+i.toString()+"'>";
+      cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"'>";
+      cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"'>";
+      cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'>";
 
     }
+
     function totalizador()
     {
+        j = i;
+        var somatotal= 0;
+        for (j;j > 0; j--) {
+
         // Capture the entered values of two input boxes
-        var valor1 = document.getElementById('resultadomultiplicacao').value;
-        var valor2 = document.getElementById('resultadomultiplicacao2').value;
+        var valor = document.getElementById("resultadomultiplicacao"+j.toString()).value;
+
+        somatotal = (Number(valor) + Number(somatotal)).toFixed(2);
+
+        //var valor2 = document.getElementById('resultadomultiplicacao2').value;
 
         // Add them together and display
-        var somatotal = parseInt(valor1) + parseInt(valor2);
+        //var somatotal = parseInt(valor);
         //document.write(multiplicacao);
-        document.getElementById("resultadofinal").value = somatotal;
 
+      }
+      document.getElementById("resultadofinal").value = somatotal;
     }
     function imprimirpagina()
     {
       window.print();
     }
-

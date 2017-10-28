@@ -4,7 +4,7 @@ body {
     padding: 0px;
 }
 table, th, td {
-    border: 2px solid #ff8608;
+    border: 1px solid #000000;
     background-color: #ffffff;
     border-collapse: collapse;
     padding: 5px;
