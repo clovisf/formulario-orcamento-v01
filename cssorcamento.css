@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 1em;
     background-color: #ffffff;
     padding: 0px;
 }
@@ -8,18 +9,21 @@ table, th, td {
     background-color: #ffffff;
     border-collapse: collapse;
     padding: 5px;
-    width: 700px;
+    width: 720px;
 }
 logomarca{
 display: block;
 margin: 0 auto;
 
 }
-tr.cabecalhodescricao{
+#tabelaorc tr.cabecalhodescricao {
   text-align: center;
-  background: color:#cccccc;
+}
+#tabelaorc td.totalfinal {
+  text-align: center;
 
 }
+
 .botaoenviar{
   float: right;
 }
@@ -27,9 +31,7 @@ descricao{
 width: 100%;
 float: center;
 }
-.botaoimprimir{
-  float: center;
-}
-td.espacamentotabela{
-  background-color:;
+
+p.impressao{
+  align-items: center;
 }

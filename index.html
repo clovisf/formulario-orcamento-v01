@@ -1,10 +1,7 @@
 ﻿<html>
  <meta charset="ISO-8859-1">
 <head>
-<!--
-Autocomplete search from http://leaverou.github.io/awesomplete/
 
--->
 <title>Orçamento - Loja Magedo</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="cssorcamento.css">
@@ -17,7 +14,9 @@ Autocomplete search from http://leaverou.github.io/awesomplete/
 <body>
   <table>
    <tr>
-     <td colspan="5"><img src="logo-magedo-orcamento.jpg" alt="Logomarca Magedo Automatizacao" class="logomarca"></td>
+     <td colspan="4"><img src="logo-magedo-orcamento.jpg" alt="Logomarca Magedo Automatizacao" class="logomarca"></td>
+    <td colspan="1"><p class="impressao"><input type="submit" value="Imprimir pagina" class="" onclick="imprimirpagina();"></p>
+     </td>
    </tr>
    <tr>
      <th colspan="5"><br></th>
@@ -50,34 +49,39 @@ Autocomplete search from http://leaverou.github.io/awesomplete/
       <td>Descricao</td>
       <td>Quantidade</td>
       <td>R$ unitario</td>
-      <td>R$ total</td>
+      <td class="rstotal">R$ total</td>
    </tr>
-   <!--
-   <tr class="">
-      <td><input type="text" class="" name="" id="pretexto" placeholder="Produto 1"></td>
-      <td><input type="text" name="quantidade" size="4" id="qtde"></td>
-      <td><input type="text" name="valorunitario" size="8" id="valorunit"></td>
-      <td><input type="text" name"resultadomultiplicacao" size="8" id="resultadomultiplicacao"></td>
-   </tr>
- -->
+
 
    <tr class="totalizador">
       <td colspan="2"></td>
-      <td>R$ total= </td>
+      <td class="totalfinal">Total R$= </td>
       <td><input type="text" name"resultadofinal" size="7" id="resultadofinal"></td>
    </tr>
    <tr><td colspan="5" class="espacamentotabela"><input type="submit" value="Adicionar linha" class="novalinha" onclick="adicionarlinha();"/></td></tr>
-   <tr class="botaofinalizar">
-     <td colspan="5"><input type="submit" value="Totalizar" class="botaoenviar" onclick="multiplicar();totalizador();"></td>
+   <tr class="">
+     <td colspan="5"><br></td>
   </tr>
   <tr>
-    <td colspan="5"><br><br></td>
+    <td colspan="5">Observações:<br></td>
   </tr>
   <tr>
-    <td colspan="5"><input type="submit" value="Imprimir pagina" class="botaoimprimir" onclick="imprimirpagina();"></td>
+    <td colspan="5"><textarea rows="4"  cols="80" name="observacoes" id="observacoesfinais"></textarea></td>
   </tr>
+   <tr class="">
+     <td colspan="5"><br></td>
+  </tr>
+  <tr>
+    <td colspan="5">Condições de Pagamento:<br></td>
+  </tr>
+  <tr>
+    <td colspan="5"><textarea rows="4"  cols="80" name="condicoes" id="condicoespagto"></textarea></td>
+  </tr>
+  <tr>
+    <td colspan="5"><br></td>
+  </tr>
+
  </table>
- <script src="JavaScript-autoComplete/auto-complete.min.js"></script>
-</body>
+ </body>
 </head>
 </html>

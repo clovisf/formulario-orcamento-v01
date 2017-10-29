@@ -1,6 +1,8 @@
 var i = 1;
-
+var somatotal= 0.00;
 window.onload = function(){
+
+document.getElementById("resultadofinal").value = somatotal;
 
   var table = document.getElementById("tabelaorc");
   var row = table.insertRow(1);
@@ -9,8 +11,8 @@ window.onload = function(){
   var cell3 = row.insertCell(2);
   var cell4 = row.insertCell(3);
   cell1.innerHTML = "<input type='text' class='' name='' placeholder='Produto "+i.toString()+"'>";
-  cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"'>";
-  cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"'>";
+  cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'>";
+  cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'>";
   cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'>";
 
 };
@@ -49,16 +51,17 @@ function multiplicar()
       var cell3 = row.insertCell(2);
       var cell4 = row.insertCell(3);
       cell1.innerHTML = "<input type='text' class='' name='' placeholder='Produto "+i.toString()+"'>";
-      cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"'>";
-      cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"'>";
+      cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'>";
+      cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'>";
       cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'>";
 
+      totalizador();
     }
 
     function totalizador()
     {
         j = i;
-        var somatotal= 0;
+        somatotal = 0.00;
         for (j;j > 0; j--) {
 
         // Capture the entered values of two input boxes
