@@ -50,7 +50,7 @@ function multiplicar()
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
       var cell4 = row.insertCell(3);
-      cell1.innerHTML = "<input type='text' class='' name='' placeholder='Produto "+i.toString()+"'>";
+      cell1.innerHTML = "<input type='text' class='' name='' placeholder='Produto "+i.toString()+"' id='Produto"+i.toString()+"'>";
       cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'>";
       cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'>";
       cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'>";
@@ -81,4 +81,37 @@ function multiplicar()
     function imprimirpagina()
     {
       window.print();
+    }
+    function gerarcsv(){
+      j = i;
+
+      var csvarray = [];
+      csvarray = [document.getElementById("nomecliente").value,
+      document.getElementById("nomerua").value,
+      document.getElementById("nomebairro").value,
+      document.getElementById("nomecidade").value,
+      document.getElementById("nomeestado").value,
+      document.getElementById("dddfixo").value,
+      document.getElementById("fonefixo").value,
+      document.getElementById("dddcelular").value,
+      document.getElementById("telcelular").value,
+      document.getElementById("observacoesfinais").value,
+      document.getElementById("condicoespagto").value
+      ];
+
+      var descricao = (csvarray.length + 1) + j;
+      var quantidade = (csvarray.length + 2) + j;
+      var rsunitario = (csvarray.length + 3) + j;
+      var rstotal = (csvarray.length + 4) + j;
+      console.log(descricao);
+
+      for (descricao; descricao > j; descricao--){
+
+        csvarray.push(descricao);
+      }
+
+
+
+      console.log(csvarray);
+      console.log(csvarray.length);
     }
