@@ -10,7 +10,7 @@ document.getElementById("resultadofinal").value = somatotal;
   var cell2 = row.insertCell(1);
   var cell3 = row.insertCell(2);
   var cell4 = row.insertCell(3);
-  cell1.innerHTML = "<input type='text' class='' name='' placeholder='Produto "+i.toString()+"'>";
+  cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto "+i.toString()+"'>";
   cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'>";
   cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'>";
   cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'>";
@@ -50,7 +50,7 @@ function multiplicar()
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
       var cell4 = row.insertCell(3);
-      cell1.innerHTML = "<input type='text' class='' name='' placeholder='Produto "+i.toString()+"' id='Produto"+i.toString()+"'>";
+      cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto "+i.toString()+"' id='Produto"+i.toString()+"'>";
       cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'>";
       cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'>";
       cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'>";
@@ -110,3 +110,16 @@ function multiplicar()
       console.log(csvarray);
       console.log(csvarray.length);
     }
+
+    new autoComplete({
+      selector: 'input[name="busca"]',
+      minChars: 2,
+    source: function(term, suggest){
+        term = term.toLowerCase();
+        var choices = ['ActionScript', 'AppleScript', 'Asp', 'C++', 'Javascript', 'Cobol', 'Python'];
+        var matches = [];
+        for (g=0; g<choices.length; g++)
+            if (~choices[g].toLowerCase().indexOf(term)) matches.push(choices[g]);
+        suggest(matches);
+    }
+});
