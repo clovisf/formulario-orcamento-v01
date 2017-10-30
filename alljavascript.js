@@ -85,8 +85,7 @@ function multiplicar()
     function gerarcsv(){
       j = i;
 
-      var csvarray = [];
-      csvarray = [document.getElementById("nomecliente").value,
+      var csvarray = [document.getElementById("nomecliente").value,
       document.getElementById("nomerua").value,
       document.getElementById("nomebairro").value,
       document.getElementById("nomecidade").value,
@@ -105,12 +104,8 @@ function multiplicar()
       var rstotal = (csvarray.length + 4) + j;
       console.log(descricao);
 
-      for (descricao; descricao > j; descricao--){
-
-        csvarray.push(descricao);
-      }
-
-
+      const xls = new xlsExport(csvarray, "Um Titulo");
+      xls.exportToCSV();
 
       console.log(csvarray);
       console.log(csvarray.length);
