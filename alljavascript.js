@@ -1,16 +1,23 @@
 var i = 1;
 var somatotal= 0.00;
+
+var table;
+var row;
+var cell1;
+var cell2;
+var cell3;
+var cell4;
 window.onload = function(){
 
 document.getElementById("resultadofinal").value = somatotal;
 
-  var table = document.getElementById("tabelaorc");
-  var row = table.insertRow(1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  var cell4 = row.insertCell(3);
-  cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto "+i.toString()+"'>";
+  table = document.getElementById("tabelaorc");
+  row = table.insertRow(1);
+  cell1 = row.insertCell(0);
+  cell2 = row.insertCell(1);
+  cell3 = row.insertCell(2);
+  cell4 = row.insertCell(3);
+  cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto 1' id='Produto "+i.toString()+"'>";
   cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'>";
   cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'>";
   cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'>";
@@ -46,10 +53,11 @@ function multiplicar()
       } else{
         var row = table.insertRow(i);
       }
-      var cell1 = row.insertCell(0);
-      var cell2 = row.insertCell(1);
-      var cell3 = row.insertCell(2);
-      var cell4 = row.insertCell(3);
+      console.log("Valor de i= "+i);
+      cell1 = row.insertCell(0);
+      cell2 = row.insertCell(1);
+      cell3 = row.insertCell(2);
+      cell4 = row.insertCell(3);
       cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto "+i.toString()+"' id='Produto"+i.toString()+"'>";
       cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'>";
       cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'>";
@@ -83,32 +91,46 @@ function multiplicar()
       window.print();
     }
     function gerarcsv(){
-      j = i;
+      var j = i;
+      var csvarray = [];
 
-      var csvarray = [document.getElementById("nomecliente").value,
-      document.getElementById("nomerua").value,
-      document.getElementById("nomebairro").value,
-      document.getElementById("nomecidade").value,
-      document.getElementById("nomeestado").value,
-      document.getElementById("dddfixo").value,
-      document.getElementById("fonefixo").value,
-      document.getElementById("dddcelular").value,
-      document.getElementById("telcelular").value,
-      document.getElementById("observacoesfinais").value,
-      document.getElementById("condicoespagto").value
-      ];
 
-      var descricao = (csvarray.length + 1) + j;
-      var quantidade = (csvarray.length + 2) + j;
-      var rsunitario = (csvarray.length + 3) + j;
-      var rstotal = (csvarray.length + 4) + j;
-      console.log(descricao);
 
-      const xls = new xlsExport(csvarray, "Um Titulo");
-      xls.exportToCSV();
+      //var contagemdelinhas = (csvarray.length) + (j * 4);
+      var contagemdelinhas = (j * 4);
+      console.log("Inicial= "+csvarray.length+", posicoes a mais= "+contagemdelinhas);
+      var m=0;
+      var oproduto;
+      var aqtde;
+      var ovalorunit;
+      var oresultadomultiplicacao;
+
+      var nomecliente= document.getElementById("nomecliente").value;
+      var nomerua= document.getElementById("nomerua").value;
+      var nomebairro= document.getElementById("nomebairro").value;
+      var nomecidade= document.getElementById("nomecidade").value;
+      var nomeestado= document.getElementById("nomeestado").value;
+      var dddfixo= document.getElementById("dddfixo").value;
+      var fonefixo= document.getElementById("fonefixo").value;
+      var dddcelular= document.getElementById("dddcelular").value;
+      var telcelular= document.getElementById("telcelular").value;
+      var observacoesfinais= document.getElementById("observacoesfinais").value;
+      var condicoespagto= document.getElementById("condicoespagto").value;
+
+      csvarray.push (nomecliente, nomerua, nomebairro, nomecidade, nomeestado, dddfixo, fonefixo, dddcelular, telcelular, observacoesfinais, condicoespagto);
+      console.log("valor de J= ", j);
+
+      oproduto = document.getElementById('Produto' + m.toString()).value;
+      aqtde = document.getElementById('qtde' + m.toString()).value;
+      ovalorunit = document.getElementById('valorunit' + m.toString()).value;
+      oresultadomultiplicacao = document.getElementById('resultadomultiplicacao' + m.toString()).value;
+
+      csvarray.push (oproduto, aqtde, ovalorunit, oresultadomultiplicacao);
 
       console.log(csvarray);
-      console.log(csvarray.length);
+      //const xls = new xlsExport(csvarray, "Um Titulo");
+      //xls.exportToCSV();
+
     }
 
     new autoComplete({
