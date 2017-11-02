@@ -17,10 +17,10 @@ document.getElementById("resultadofinal").value = somatotal;
   cell2 = row.insertCell(1);
   cell3 = row.insertCell(2);
   cell4 = row.insertCell(3);
-  cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto 1' id='Produto "+i.toString()+"'>";
-  cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'>";
-  cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'>";
-  cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'>";
+  cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto 1' id='Produto"+i.toString()+"'/>";
+  cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
+  cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
+  cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'/>";
 
 };
 function multiplicar()
@@ -32,7 +32,7 @@ function multiplicar()
         var valor2 = document.getElementById('valorunit'+j.toString()).value;
 
 
-        console.log(multiplicacao);
+        //console.log(multiplicacao);
         // Add them together and display
         var multiplicacao = ((parseInt(valor1*10).toFixed(2) * parseInt(valor2*10).toFixed(2))/100).toFixed(2);
         //document.write(multiplicacao);
@@ -53,15 +53,15 @@ function multiplicar()
       } else{
         var row = table.insertRow(i);
       }
-      console.log("Valor de i= "+i);
+      //console.log("Valor de i= "+i.toString());
       cell1 = row.insertCell(0);
       cell2 = row.insertCell(1);
       cell3 = row.insertCell(2);
       cell4 = row.insertCell(3);
-      cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto "+i.toString()+"' id='Produto"+i.toString()+"'>";
-      cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'>";
-      cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'>";
-      cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'>";
+      cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto "+i.toString()+"' id='Produto"+i.toString()+"'/>";
+      cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
+      cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
+      cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'/>";
 
       totalizador();
     }
@@ -99,7 +99,7 @@ function multiplicar()
       //var contagemdelinhas = (csvarray.length) + (j * 4);
       var contagemdelinhas = (j * 4);
       console.log("Inicial= "+csvarray.length+", posicoes a mais= "+contagemdelinhas);
-      var m=0;
+      var m= j;
       var oproduto;
       var aqtde;
       var ovalorunit;
@@ -120,12 +120,16 @@ function multiplicar()
       csvarray.push (nomecliente, nomerua, nomebairro, nomecidade, nomeestado, dddfixo, fonefixo, dddcelular, telcelular, observacoesfinais, condicoespagto);
       console.log("valor de J= ", j);
 
-      oproduto = document.getElementById('Produto' + m.toString()).value;
-      aqtde = document.getElementById('qtde' + m.toString()).value;
-      ovalorunit = document.getElementById('valorunit' + m.toString()).value;
-      oresultadomultiplicacao = document.getElementById('resultadomultiplicacao' + m.toString()).value;
+      for(; m > 0; m--){
+        oproduto = document.getElementById('Produto'+m.toString()).value;
+        aqtde = document.getElementById('qtde'+m.toString()).value;
+        ovalorunit = document.getElementById('valorunit'+m.toString()).value;
+        oresultadomultiplicacao = document.getElementById('resultadomultiplicacao'+m.toString()).value;
 
-      csvarray.push (oproduto, aqtde, ovalorunit, oresultadomultiplicacao);
+        csvarray.push (oproduto, aqtde, ovalorunit, oresultadomultiplicacao);
+        //csvarray.push (aqtde, ovalorunit, oresultadomultiplicacao);
+      }
+
 
       console.log(csvarray);
       //const xls = new xlsExport(csvarray, "Um Titulo");
