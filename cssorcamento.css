@@ -12,15 +12,15 @@ display: block;
 margin: 0 auto;
 
 }
-.tabelaorc{
-  border: 1px solid #000000;
+.tabelaorc {
+  border: 0px solid #000000;
   background-color: #ffffff;
   border-collapse: collapse;
   padding: 0px;
   width: 720px;
 }
-.cabecalho{
-  border: 1px solid #000000;
+.cabecalho {
+  border: 0px solid #000000;
   background-color: #ffffff;
   border-collapse: collapse;
   padding: 0px;
@@ -31,6 +31,7 @@ margin: 0 auto;
 .botaoenviar{
   float: right;
 }
+
 descricao{
 width: 100%;
 float: center;
@@ -70,4 +71,14 @@ p.impressao{
   color: black;
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
+}
+
+.produtodinamico:tr, .qtdedinamica tr, .valorunitdinamico tr, .resultmultiplicdinamico tr, .totalizador {
+	border: 1px solid #f27313;
+	border-right: 1px solid #000000;
+}
+.cabecalhocontato, .cabecalhodescricao, .adicionarlinha {
+	border-top: 1px solid #f27313;
+	border-bottom: 1px solid #f27313;
+  border-radius: 5px;
 }
