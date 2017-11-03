@@ -132,20 +132,7 @@ function multiplicar()
 
 
       console.log(csvarray);
-      //const xls = new xlsExport(csvarray, "Um Titulo");
-      //xls.exportToCSV();
-
+      	
+	
     }
 
-    new autoComplete({
-      selector: 'input[name="busca"]',
-      minChars: 2,
-    source: function(term, suggest){
-        term = term.toLowerCase();
-        var choices = ['ActionScript', 'AppleScript', 'Asp', 'C++', 'Javascript', 'Cobol', 'Python'];
-        var matches = [];
-        for (g=0; g<choices.length; g++)
-            if (~choices[g].toLowerCase().indexOf(term)) matches.push(choices[g]);
-        suggest(matches);
-    }
-});
