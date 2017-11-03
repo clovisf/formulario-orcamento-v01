@@ -3,26 +3,30 @@ body {
     font-size: 1em;
     background-color: #ffffff;
     padding: 0px;
+    margin-top: 2px;
+    margin-left: 2px;
 }
-table, th, td {
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    border-collapse: collapse;
-    padding: 5px;
-    width: 720px;
-}
+
 logomarca{
 display: block;
 margin: 0 auto;
 
 }
-#tabelaorc tr.cabecalhodescricao {
-  text-align: center;
+.tabelaorc{
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  padding: 0px;
+  width: 720px;
 }
-#tabelaorc td.totalfinal {
-  text-align: center;
+.cabecalho{
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  padding: 0px;
+  width: 720px;
+}
 
-}
 
 .botaoenviar{
   float: right;
@@ -34,4 +38,36 @@ float: center;
 
 p.impressao{
   align-items: center;
+
+}
+
+.tratamento, .nomecliente, .emailcliente, .ruaavenida, .nomebairro, .nomecidade, .nomeestado, .dddfixo, .fonefixo, .dddcelular, .telcelular, .somatoriofinal, .observacoesfinais, .condicoespagto{
+
+  border: 1px solid #f27313;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+
+}
+.imprimir, .gerararquivo, .novalinha {
+  background-color: #f27313;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+.observacoesfinais, .condicoespagto {
+    width: 100%;
+}
+.produtodinamico, .qtdedinamica, .valorunitdinamico, .resultmultiplicdinamico {
+  border: 1px solid #f27313;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
 }

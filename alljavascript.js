@@ -17,10 +17,10 @@ document.getElementById("resultadofinal").value = somatotal;
   cell2 = row.insertCell(1);
   cell3 = row.insertCell(2);
   cell4 = row.insertCell(3);
-  cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto 1' id='Produto"+i.toString()+"'/>";
-  cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
-  cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
-  cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'/>";
+  cell1.innerHTML = "<input type='text' class='produtodinamico' name='busca' placeholder='Produto 1' id='Produto"+i.toString()+"'/>";
+  cell2.innerHTML = "<input type='text' class='qtdedinamica' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
+  cell3.innerHTML = "<input type='text' class='valorunitdinamico' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
+  cell4.innerHTML = "<input type='text' class='resultmultiplicdinamico' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'/>";
 
 };
 function multiplicar()
@@ -58,10 +58,10 @@ function multiplicar()
       cell2 = row.insertCell(1);
       cell3 = row.insertCell(2);
       cell4 = row.insertCell(3);
-      cell1.innerHTML = "<input type='text' class='' name='busca' placeholder='Produto "+i.toString()+"' id='Produto"+i.toString()+"'/>";
-      cell2.innerHTML = "<input type='text' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
-      cell3.innerHTML = "<input type='text' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
-      cell4.innerHTML = "<input type='text' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'/>";
+      cell1.innerHTML = "<input type='text' class='produtodinamico' name='busca' placeholder='Produto "+i.toString()+"' id='Produto"+i.toString()+"'/>";
+      cell2.innerHTML = "<input type='text' class='qtdedinamica' name='quantidade' size='4' id='qtde"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
+      cell3.innerHTML = "<input type='text' class='valorunitdinamico' name='valorunitario' size='8' id='valorunit"+i.toString()+"' onchange='multiplicar();totalizador();'/>";
+      cell4.innerHTML = "<input type='text' class='resultmultiplicdinamico' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'/>";
 
       totalizador();
     }

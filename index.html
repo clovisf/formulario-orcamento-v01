@@ -15,11 +15,11 @@
 
 </head>
 <body>
-  <table>
+  <table class="cabecalho">
    <tr>
      <td colspan="4"><img src="logo-magedo-orcamento.jpg" alt="Logomarca Magedo Automatizacao" class="logomarca"></td>
-    <td colspan="1"><p class="impressao"><input type="submit" value="Imprimir pagina" class="" onclick="imprimirpagina();"></p>
-      <input type="submit" value="Salvar em CSV" class="" onclick="gerarcsv();">
+    <td colspan="1"><p class="impressao"><input type="submit" value="Imprimir pagina" class="imprimir" onclick="imprimirpagina();"></p>
+      <input type="submit" value="Salvar em CSV" class="gerararquivo" onclick="gerarcsv();">
      </td>
    </tr>
    <tr>
@@ -36,9 +36,19 @@
      <td colspan="5"><br><br></td>
    </tr>
 <tr>
-     <td colspan="5">Aos cuidados de: <input type="text" name="nomepessoa" size="20" id="nomecliente" placeholder="Nome do cliente"><br>
-        Rua/Avenida <input type="text" name="ruaavenida" size="20" id="nomerua" placeholder="Nome da rua">, bairro <input type="text" name="bairro" size="20" id="nomebairro" placeholder="Nome do bairro"> - <input type="text" name="cidade" size="20" id="nomecidade" placeholder="Cidade"> (<input type="text" name="estado" size="2" id="nomeestado" placeholder="Estado">)<br>
-        (<input type="text" name="ddd" size="3" id="dddfixo" placeholder="ddd">)<input type="text" name="telefonefixo" size="9" id="fonefixo" placeholder="xxxx-xxxx"> e (<input type="text" name="celular" size="3" id="dddcelular" placeholder="ddd">)<input type="text" name="telefonecelular" size="10" id="telcelular" placeholder="9xxxx-xxxx">
+     <td colspan="5">Aos cuidados de:
+       <select name="tratamento" class="tratamento" id="tratamento">
+         <option value=" ">-</option>
+         <option value="Sr">Sr. </option>
+         <option value="Sra">Sra. </option>
+         <option value="Srs">Srs. </option>
+       </select>
+       <input type="text" class="nomecliente" size="40" id="nomecliente" placeholder="Nome do cliente"><br>
+       E-mail: <input type="text" class="emailcliente" size="40" id="emailcliente" placeholder="exemplo@exemplo.com.br"><br><br>
+        Rua/Avenida <input type="text" name="ruaavenida" class="ruaavenida" size="20" id="nomerua" placeholder="Nome da rua">, <br>
+        Bairro <input type="text" name="bairro" class="nomebairro" size="20" id="nomebairro" placeholder="Nome do bairro"> - <br>
+        Cidade: <input type="text" name="cidade" class="nomecidade" size="20" id="nomecidade" placeholder="Cidade"> (<input type="text" name="estado" size="2" class="nomeestado" id="nomeestado" placeholder="SC">)<br>
+        Telefones: (<input type="text" name="ddd" size="3" class="dddfixo" id="dddfixo" placeholder="ddd">)<input type="text" name="telefonefixo" size="9" class="fonefixo" id="fonefixo" placeholder="xxxx-xxxx"> e (<input type="text" name="celular" size="3" class="dddcelular" id="dddcelular" placeholder="ddd">)<input type="text" name="telefonecelular" class="telcelular" size="10" id="telcelular" placeholder="9xxxx-xxxx">
 
      </td>
     </tr>
@@ -48,19 +58,20 @@
    </tr>
    <tr><td colspan="5"><br></td></tr>
  </table>
- <table id="tabelaorc">
+ <table class="tabelaorc" id="tabelaorc">
    <tr class="cabecalhodescricao">
       <td>Descricao</td>
       <td>Quantidade</td>
       <td>R$ unitario</td>
       <td class="rstotal">R$ total</td>
    </tr>
-
-
+  <tr class="">
+    <td class="" colspan="5"><br></td>
+  </tr>
    <tr class="totalizador">
       <td colspan="2"></td>
       <td class="totalfinal">Total R$= </td>
-      <td><input type="text" name"resultadofinal" size="7" id="resultadofinal"></td>
+      <td><input type="text" class="somatoriofinal" name"resultadofinal" size="7" id="resultadofinal"></td>
    </tr>
    <tr><td colspan="5" class="espacamentotabela"><input type="submit" value="Adicionar linha" class="novalinha" onclick="adicionarlinha();"/></td></tr>
    <tr class="">
@@ -70,7 +81,7 @@
     <td colspan="5">Observações:<br></td>
   </tr>
   <tr>
-    <td colspan="5"><textarea rows="4"  cols="80" name="observacoes" id="observacoesfinais"></textarea></td>
+    <td colspan="5"><textarea rows="4"  class="observacoesfinais" cols="" name="observacoes" id="observacoesfinais"></textarea></td>
   </tr>
    <tr class="">
      <td colspan="5"><br></td>
@@ -79,7 +90,7 @@
     <td colspan="5">Condições de Pagamento:<br></td>
   </tr>
   <tr>
-    <td colspan="5"><textarea rows="4"  cols="80" name="condicoes" id="condicoespagto"></textarea></td>
+    <td colspan="5"><textarea rows="4"  cols="" name="condicoes" class="condicoespagto" id="condicoespagto"></textarea></td>
   </tr>
   <tr>
     <td colspan="5"><br></td>
