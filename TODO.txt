@@ -1,0 +1,7 @@
+TODO's (Novembro 4th 2017):
+
+- Adicionar os seguintes campos ao CSV:
+tratamento, email
+
+- Inverter a ordem em que as linhas de descrição de produtos são salvas
+(hoje são salvas da última para a primeira)

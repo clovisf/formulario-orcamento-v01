@@ -2,33 +2,30 @@
  <meta charset="ISO-8859-1">
 <head>
 
-<title>Orçamento - Loja Magedo</title>
+<title>Orçamento - Loja Tal</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="cssorcamento.css">
-<!--Using autocomplete Javascript library: https://goodies.pixabay.com/javascript/auto-complete/demo.html -->
-<link rel="stylesheet" type="text/css" href="JavaScript-autoComplete-master/auto-complete.css">
-<link rel="icon" type="image/png" href="favicon.ico">
-<script src="JavaScript-autoComplete-master/auto-complete.min.js"></script>
+<link rel="icon" type="image/png" href="">
 <script src="alljavascript.js"></script>
-<!-- Exporting data to XLS or CSV: https://www.cssscript.com/export-javascript-array-xls-csv-xlsexport/  -->
-<script src="xlsExport-master/xls-export.js"></script>
+<!-- CSV file generation uses code from here: https://stackoverflow.com/questions/3665115/create-a-file-in-memory-for-user-to-download-not-through-server -->
 
 </head>
 <body>
+
   <table class="cabecalho">
    <tr>
-     <td colspan="4"><img src="logo-magedo-orcamento.jpg" alt="Logomarca Magedo Automatizacao" class="logomarca"></td>
+     <td colspan="4"><img src="" alt="Logomarca da sua empresa" class="logomarca"></td>
     <td colspan="1"><p class="impressao"><input type="submit" value="Imprimir pagina" class="imprimir" onclick="imprimirpagina();"></p>
-      <input type="submit" value="Salvar em CSV" class="gerararquivo" onclick="gerarcsv();">
+      Nome do Arquivo: <input type="text" name="nomedoarquivo" id="nomedoarquivo" value="Nome do Arquivo"/> <input type="submit" value="Salvar em CSV" class="gerararquivo" onclick="gerarcsv();">
      </td>
    </tr>
    <tr>
      <th colspan="5"><br></th>
    </tr>
    <tr>
-     <td colspan="5">Loja Magedo LTDA ME<br>
-        Rua Max Wilhelm 901, bairro Vila Baependi - Jaraguá do Sul (SC)<br>
-        (47)3371-0109 e (47)9 9163-1513
+     <td colspan="5">Loja xxx LTDA ME<br>
+        Rua tal, bairro tal - Cidade tal (Estado)<br>
+        (ddd)xxxx-xxxx e (ddd)9 xxxx-xxxx
 
      </td>
     </tr>
@@ -97,7 +94,6 @@
   </tr>
 
  </table>
-
  </body>
 </head>
 </html>

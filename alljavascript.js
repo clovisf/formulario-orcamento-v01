@@ -132,7 +132,21 @@ function multiplicar()
 
 
       console.log(csvarray);
+	download(document.getElementById("nomedoarquivo").value+'.csv', csvarray);
       	
 	
     }
 
+
+function download(filename, csvarray) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvarray));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
