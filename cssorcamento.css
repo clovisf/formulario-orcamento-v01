@@ -42,10 +42,11 @@ p.impressao{
 
 }
 
-.tratamento, .nomecliente, .emailcliente, .ruaavenida, .nomebairro, .nomecidade, .nomeestado, .dddfixo, .fonefixo, .dddcelular, .telcelular, .somatoriofinal, .observacoesfinais, .condicoespagto{
+.nomedoarquivo, .tratamento, .nomecliente, .emailcliente, .ruaavenida, .nomebairro, .nomecidade, .nomeestado, .dddfixo, .fonefixo, .dddcelular, .telcelular, .tipodeproduto, .somatoriofinal, .observacoesfinais, .condicoespagto{
 
-  border: 1px solid #f27313;
-  border-radius: 5px;
+  background-color: #f27313;
+  border: 0px;
+  border-bottom: 1px solid #000000;
   box-sizing: border-box;
   color: black;
   font-family: 'Roboto', sans-serif;
@@ -73,11 +74,11 @@ p.impressao{
   font-size: 1em;
 }
 
-.produtodinamico:tr, .qtdedinamica tr, .valorunitdinamico tr, .resultmultiplicdinamico tr, .totalizador {
-	border: 1px solid #f27313;
-	border-right: 1px solid #000000;
+.produtodinamico tr, .qtdedinamica tr, .valorunitdinamico tr, .resultmultiplicdinamico tr, .totalizador {
+
+  box-sizing: border-box;
 }
-.cabecalhocontato, .cabecalhodescricao, .adicionarlinha {
+.cabecalhocontato, .cabecalhodescricao {
 	border-top: 1px solid #f27313;
 	border-bottom: 1px solid #f27313;
   border-radius: 5px;

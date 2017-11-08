@@ -7,6 +7,7 @@ var cell1;
 var cell2;
 var cell3;
 var cell4;
+
 window.onload = function(){
 
 document.getElementById("resultadofinal").value = somatotal;
@@ -105,7 +106,9 @@ function multiplicar()
       var ovalorunit;
       var oresultadomultiplicacao;
 
+      var tratamento = document.getElementById("tratamento").value;
       var nomecliente= document.getElementById("nomecliente").value;
+      var emailcliente = document.getElementById("emailcliente").value;
       var nomerua= document.getElementById("nomerua").value;
       var nomebairro= document.getElementById("nomebairro").value;
       var nomecidade= document.getElementById("nomecidade").value;
@@ -117,7 +120,7 @@ function multiplicar()
       var observacoesfinais= document.getElementById("observacoesfinais").value;
       var condicoespagto= document.getElementById("condicoespagto").value;
 
-      csvarray.push (nomecliente, nomerua, nomebairro, nomecidade, nomeestado, dddfixo, fonefixo, dddcelular, telcelular, observacoesfinais, condicoespagto);
+      csvarray.push (tratamento, nomecliente, emailcliente, nomerua, nomebairro, nomecidade, nomeestado, dddfixo, fonefixo, dddcelular, telcelular, observacoesfinais, condicoespagto);
       console.log("valor de J= ", j);
 
       for(; m > 0; m--){
@@ -133,11 +136,69 @@ function multiplicar()
 
       console.log(csvarray);
 	download(document.getElementById("nomedoarquivo").value+'.csv', csvarray);
-      	
-	
+
+
     }
 
+function nomeandoarquivo(month, day, year, nomecliente, nomebairro){
 
+  // Return today's date and time
+  var currentTime = new Date();
+  // returns the month (from 0 to 11)
+  var month = currentTime.getMonth() + 1;
+  // returns the day of the month (from 1 to 31)
+  var day = currentTime.getDate();
+  // returns the year (four digits)
+  var year = currentTime.getFullYear();
+
+  switch(month){
+    case 1:
+      month = "Janeiro";
+      break;
+    case 2:
+      month = "Fevereiro";
+      break;
+    case 3:
+      month = "Marco";
+      break;
+    case 4:
+      month = "Abril";
+      break;
+    case 5:
+      month = "Maio";
+      break;
+    case 6:
+      month = "Junho";
+      break;
+    case 7:
+      month = "Julho";
+      break;
+    case 8:
+      month = "Agosto";
+      break;
+    case 9:
+      month = "Setembro";
+      break;
+    case 10:
+      month = "Outubro";
+      break;
+    case 11:
+      month = "Novembro";
+      break;
+    case 12:
+      month = "Dezembro";
+      break
+
+  }
+
+  var nomedoclientesemespacos = document.getElementById("nomecliente").value.replace(/\s/g,'');
+  var bairrosemespacos = document.getElementById("nomebairro").value.replace(/\s/g,'');
+  var tipodeorcamento = document.getElementById("tipodeproduto").value.replace(/\s/g,'');
+
+  var novonome = year.toString()+month.toString()+day.toString()+"-"+nomedoclientesemespacos.toString() + "-" + bairrosemespacos.toString()+"-"+tipodeorcamento.toString();
+  document.getElementById("nomedoarquivo").value = novonome;
+
+}
 function download(filename, csvarray) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvarray));
