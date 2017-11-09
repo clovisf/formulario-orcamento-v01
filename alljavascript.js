@@ -24,6 +24,9 @@ document.getElementById("resultadofinal").value = somatotal;
   cell4.innerHTML = "<input type='text' class='resultmultiplicdinamico' name'resultadomultiplicacao' size='8' id='resultadomultiplicacao"+i.toString()+"'/>";
 
 };
+
+
+
 function multiplicar()
     {
       j = i;
@@ -210,4 +213,10 @@ function download(filename, csvarray) {
   element.click();
 
   document.body.removeChild(element);
+}
+
+/* content-width fitting textbox from here: https://stackoverflow.com/questions/17772260/textarea-auto-height */
+function auto_grow(element) {
+    element.style.width = "auto";
+    element.style.width = (element.scrollWidth)+'px';
 }

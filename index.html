@@ -5,7 +5,8 @@
 <title>Orçamento - Loja Tal</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="cssorcamento.css">
-<link rel="icon" type="image/png" href="">
+<link rel="stylesheet" type="text/css" media="print" href="print.css">
+<link rel="icon" type="image/png" href="favicon.ico">
 <script src="alljavascript.js"></script>
 <!-- CSV file generation uses code from here: https://stackoverflow.com/questions/3665115/create-a-file-in-memory-for-user-to-download-not-through-server -->
 
@@ -14,9 +15,9 @@
 
   <table class="cabecalho">
    <tr>
-     <td colspan="4"><img src="" alt="Logomarca da sua empresa" class="logomarca"></td>
+     <td colspan="4"><img src="logo-magedo-orcamento.jpg" alt="Logomarca da sua empresa" class="logomarca"></td>
     <td colspan="1"><p class="impressao"><input type="submit" value="Imprimir pagina" class="imprimir" onclick="imprimirpagina();"></p>
-      Nome do Arquivo: <input type="text" name="nomedoarquivo" id="nomedoarquivo" value="Nome do Arquivo"/> <input type="submit" value="Salvar em CSV" class="gerararquivo" onclick="gerarcsv();">
+      Nome do Arquivo: <input type="text" name="nomedoarquivo" id="nomedoarquivo" class="nomedoarquivo" value="Nome do Arquivo" onkeyup="auto_grow(this)"> <input type="submit" value="Salvar em CSV" class="gerararquivo" onclick="gerarcsv();">
      </td>
    </tr>
    <tr>
@@ -40,18 +41,18 @@
          <option value="Sra">Sra. </option>
          <option value="Srs">Srs. </option>
        </select>
-       <input type="text" class="nomecliente" size="40" id="nomecliente" placeholder="Nome do cliente"><br>
-       E-mail: <input type="text" class="emailcliente" size="40" id="emailcliente" placeholder="exemplo@exemplo.com.br"><br><br>
-        Rua/Avenida: <input type="text" name="ruaavenida" class="ruaavenida" size="20" id="nomerua" placeholder="Nome da rua">, <br>
-        Bairro: <input type="text" name="bairro" class="nomebairro" size="20" id="nomebairro" placeholder="Nome do bairro"> - <br>
-        Cidade: <input type="text" name="cidade" class="nomecidade" size="20" id="nomecidade" placeholder="Cidade"> (<input type="text" name="estado" size="2" class="nomeestado" id="nomeestado" placeholder="SC">)<br>
-        Telefones: (<input type="text" name="ddd" size="3" class="dddfixo" id="dddfixo" placeholder="ddd">)<input type="text" name="telefonefixo" size="9" class="fonefixo" id="fonefixo" placeholder="xxxx-xxxx"> e (<input type="text" name="celular" size="3" class="dddcelular" id="dddcelular" placeholder="ddd">)<input type="text" name="telefonecelular" class="telcelular" size="10" id="telcelular" placeholder="9xxxx-xxxx">
+       <input type="text" class="nomecliente" size="" id="nomecliente" placeholder="Nome do cliente" onkeyup="auto_grow(this)"><br>
+       E-mail: <input type="text" class="emailcliente" size="" id="emailcliente" placeholder="exemplo@exemplo.com.br" onkeyup="auto_grow(this)"><br><br>
+        Rua/Avenida: <input type="text" name="ruaavenida" class="ruaavenida" size="" id="nomerua" placeholder="Nome da rua" onkeyup="auto_grow(this)">, <br>
+        Bairro: <input type="text" name="bairro" class="nomebairro" size="" id="nomebairro" placeholder="Nome do bairro" onkeyup="auto_grow(this)">, <br>
+        Cidade: <input type="text" name="cidade" class="nomecidade" size="" id="nomecidade" placeholder="Cidade" onkeyup="auto_grow(this)"> (<input type="text" name="estado" size="2" class="nomeestado" id="nomeestado" placeholder="SC">)<br>
+        Telefones: (<input type="text" name="ddd" size="3" class="dddfixo" id="dddfixo" placeholder="ddd">)<input type="text" name="telefonefixo" size="" class="fonefixo" id="fonefixo" placeholder="xxxx-xxxx" onkeyup="auto_grow(this)"> e (<input type="text" name="celular" size="3" class="dddcelular" id="dddcelular" placeholder="ddd">)<input type="text" name="telefonecelular" class="telcelular" size="" id="telcelular" placeholder="9xxxx-xxxx" onkeyup="auto_grow(this)">
 
      </td>
     </tr>
 <td colspan="5"><br><br></td>
    <tr>
-     <td colspan="5">Segue orcamento (<input type="text" class="tipodeproduto" size="40" id="tipodeproduto" placeholder="Tipo de orçamento" onchange="nomeandoarquivo();">), conforme solicitado:</td>
+     <td colspan="5">Segue orcamento (<input type="text" class="tipodeproduto" size="" id="tipodeproduto" placeholder="Tipo de orçamento" onchange="nomeandoarquivo();" onkeyup="auto_grow(this)">), conforme solicitado:</td>
    </tr>
    <tr><td colspan="5"><br></td></tr>
  </table>

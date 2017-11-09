@@ -1,0 +1,20 @@
+@media print {
+	body {
+        background-color: #ff0000;
+    }
+	.impressao, .imprimir, .gerararquivo, .novalinha {
+		display: none;
+	}
+	.nomedoarquivo, .tratamento, .nomecliente, .emailcliente, .ruaavenida, .nomebairro, .nomecidade, .nomeestado, .dddfixo, .fonefixo, .dddcelular, .telcelular, .tipodeproduto, .somatoriofinal, .observacoesfinais, .condicoespagto{
+
+  		background-color: #f27313;
+  		border: 0px;
+  		
+  		box-sizing: border-box;
+  		color: black;
+  		font-family: 'Roboto', sans-serif;
+  		font-size: 1em;
+	
+	}
+
+}
